@@ -65,3 +65,33 @@ def ver_estadisticas():
         if p[1] < mas_antigua[1]:
             mas_antigua = p
     print(f"Película más antigua: {mas_antigua[0]} ({mas_antigua[1]})\n")
+
+def menu():
+    while True:
+        print("----- MENÚ -----")
+        print("1. Agregar películas")
+        print("2. Mostrar todas las películas")
+        print("3. Buscar películas por género")
+        print("4. Eliminar una película por título")
+        print("5. Ver estadísticas del catálogo")
+        print("6. Salir")
+        opcion = input("Seleccione una opción (1-6): ")
+
+        match opcion:
+            case "1":
+                agregar_peliculas()
+            case "2":
+                mostrar_peliculas()
+            case "3":
+                buscar_por_genero()
+            case "4":
+                eliminar_por_titulo()
+            case "5":
+                ver_estadisticas()
+            case "6":
+                print("Programa finalizado.")
+                break
+            case _:
+                print("Opción no válida. Intente de nuevo.\n")
+
+menu()
